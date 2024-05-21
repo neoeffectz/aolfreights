@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AOL FREIGHT. | Login</title>
+
+       <!-- Favicon -->
+    <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{% static './favicon_io/apple-touch-icon.png' %}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="{% static './favicon_io/favicon-32x32.png' %}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="{% static './favicon_io/favicon-16x16.png' %}"
+  />
+  <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './css/login.css' %}" />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+
+     <!-- Favicon -->
+     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+     <link rel="manifest" href="./favicon_io/site.webmanifest">
+  </head>
+  <body>
+    <section class="container forms">
+      <div class="form login">
+        <div class="form-content">
+          <header>Login</header>
+          <form action="#">
+            <div class="field input-field">
+              <input type="email" placeholder="Email" class="input" />
+            </div>
+
+            <div class="field input-field">
+              <input type="password" placeholder="Password" class="password" />
+              <i class="bx bx-hide eye-icon"></i>
+            </div>
+
+            <div class="form-link">
+              <a href="#" class="forgot-pass">Forgot password?</a>
+            </div>
+
+            <div class="field button-field">
+              <button>Login</button>
+            </div>
+          </form>
+        </div>
+
+    </section>
+
+    <!-- JavaScript -->
+    <script src="{% static './js/main.js' %}"></script>
+  </body>
+</html>

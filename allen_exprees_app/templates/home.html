@@ -1,0 +1,659 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AOL FREIGHT.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static './favicon_io/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static './favicon_io/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static './favicon_io/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <link href="{% static './css/style.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- nav & Carousel Start -->
+      <div
+        class="container-fluid position-relative p-0 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+        >
+          <a href="{% url 'home' %}" class="navbar-brand p-0">
+            <h1 class="m-0">AOL Freight</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+              <a href="{% url 'home' %}" class="nav-item nav-link">About</a>
+              <a href="{% url 'contactus' %}" class="nav-item nav-link">Contact</a>
+            </div>
+            <a
+              href="{% url 'signin' %}"
+              class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4"
+              >Login</a
+            >
+          </div>
+        </nav>
+
+        <div class="owl-carousel header-carousel position-relative">
+          <div
+            class="owl-carousel-item position-relative"
+            data-dot="<img src='{% static './img/plane_contrasted_light.jpg' %}'>"
+          >
+            <img
+              class="img-fluid"
+              src="{% static './img/plane_contrasted_light.jpg' %}"
+              alt=""
+            />
+            <div class="owl-carousel-inner">
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8 pt-4">
+                    <h3 class="display-4 text-white animated slideInDown">
+                      Your Reliable Partner in Global Logistics
+                    </h3>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                      Trust us to handle your international shipments with precision and care. Your cargo reaches its destination safely and on time.
+                    </p>
+                    <a
+                      href="{% url 'contactus' %}"
+                      class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="owl-carousel-item position-relative"
+            data-dot="<img src='{% static './img/truck_flipped.jpg' %}'>"
+          >
+            <img class="img-fluid" src="{% static './img/truck_flipped.jpg' %}" alt="" />
+            <div class="owl-carousel-inner">
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8 pt-4">
+                    <h3 class="display-4 text-white animated slideInDown">
+                      From Doorstep to Destination, We’ve Got You Covered.
+                    </h3>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                      Our comprehensive logistics solutions ensure smooth transitions from pick-up to delivery.
+                    </p>
+                    <a
+                      href="{% url 'contactus' %}"
+                      class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="owl-carousel-item position-relative"
+            data-dot="<img src='{% static './img/train_.jpg' %}'>"
+          >
+            <img class="img-fluid" src="{% static './img/train_.jpg' %}" alt="" />
+            <div class="owl-carousel-inner">
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8 pt-4">
+                    <h1 class="display-4 text-white animated slideInDown">
+                      Connecting the World, One Package at a Time
+                    </h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                      We bridge distances, making global shipping hassle-free and reliable. Count on us for dependable logistics services that meet your deadlines
+                    </p>
+                    <a
+                      href="{% url 'contactus' %}"
+                      class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- nav & Carousel End -->
+
+      <!-- Track -->
+      <div
+        class="container-xxl bg-primary my-6 wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div class="container px-lg-5">
+          <div class="row align-items-center" style="height: 250px">
+            <div class="col-12 col-md-6">
+              <h3 class="text-white">Ready to get started</h3>
+              <small class="text-white"
+                >Join us today and see how easy shipping can be!</small
+              >
+            </div>
+            <div class="col-md-6 text-center">
+              <form method="get" action="{% url 'shippingdetails' %}" class="position-relative rounded w-100 mx-auto p-5" style="background: rgba(3, 46, 57, 0.8);">
+                <input
+                  class="form-control border-0 rounded w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  id="tracking-number"
+                  name="q"
+                  placeholder="Enter your tracking ID"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded py-2 px-4 position-absolute me-2"
+                  style="top: 50%; right: 46px; transform: translateY(-50%);"
+                >
+                  Track
+                </button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Track -->
+
+      <!-- Features Start -->
+      <div class="container-fluid feature py-5">
+        <div class="container py-5">
+          <div
+            class="text-center mx-auto pb-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 800px"
+          >
+            <h1 class="display-5 text-capitalize mb-3">
+              OUR <span class="text-primary">SERVICES</span>
+            </h1>
+            <p class="mb-0">WHAT WE CAN DO FOR YOU</p>
+          </div>
+          <div class="row g-4 align-items-center">
+            <div class="col-xl-4">
+              <div class="row gy-4 gx-0">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="feature-item">
+                    <div class="feature-icon">
+                      <span class="fa fa-trophy fa-2x"></span>
+                    </div>
+                    <div class="ms-4">
+                      <h5 class="mb-3">OCEAN CARGO</h5>
+                      <p class="mb-0">
+                        Reliable and efficient sea freight solutions to ensure your cargo reaches its destination safely and on time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="feature-item">
+                    <div class="feature-icon">
+                      <span class="fa fa-road fa-2x"></span>
+                    </div>
+                    <div class="ms-4">
+                      <h5 class="mb-3">FLY ANYWHERE</h5>
+                      <p class="mb-0">
+                        Efficient and secure cargo services, ensuring your shipments are delivered safely to any destination worldwide
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+              <img
+                src="{% static './img/truck_green.png' %}"
+                class="img-fluid w-100"
+                style="object-fit: cover"
+                alt="Img"
+              />
+            </div>
+            <div class="col-xl-4">
+              <div class="row gy-4 gx-0">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="feature-item justify-content-end">
+                    <div class="text-end me-4">
+                      <h5 class="mb-3">PROFESSIONAL COURIER SERVICES</h5>
+                      <p class="mb-0">
+                        Reliable and timely courier services tailored to meet your business and personal delivery
+                      </p>
+                    </div>
+                    <div class="feature-icon">
+                      <span class="fa fa-tag fa-2x"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="feature-item justify-content-end">
+                    <div class="text-end me-4">
+                      <h5 class="mb-3">CARGO STORAGE</h5>
+                      <p class="mb-0">
+                        Secure and flexible cargo storage solutions to keep your goods safe and accessible whenever you need them
+                      </p>
+                    </div>
+                    <div class="feature-icon">
+                      <span class="fa fa-map-pin fa-2x"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Features End -->
+
+      <!-- Testimonial starts -->
+      <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <h6 class="text-white text-sm-end">OUR CLIENTS</h6>
+              <h4 class="text-white text-sm-end">
+                CLIENTS THAT TRUST OUR SERVICES
+              </h4>
+            </div>
+            <div class="col-lg-4">
+              <div class="transparent-card">
+                <div class="quote-text-cont">
+                  <i class="fa fa-2x fa-solid fa-quote-left"></i>
+                  <span>
+                    "I've been using AOLFreight's cargo services for over a year, My shipments always arrive on time and in perfect condition. Highly recommend!."
+                  </span>
+                </div>
+                <div class="author">
+                  <p class="m-0 p-0">Sarah Johnson</p>
+                  <p> Los Angeles, CA</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="transparent-card">
+                <div class="quote-text-cont">
+                  <i class="fa fa-2x fa-solid fa-quote-left"></i>
+                  <span>
+                    "AOLFreight provides the best courier services I've ever experienced. Their team is always efficient. They have made my business operations much smoother. Thank you!"
+                  </span>
+                </div>
+                <div class="author">
+                  <p class="m-0 p-0">Mark Thompson</p>
+                  <p>Tokyo, Japan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial ends -->
+
+      <!-- Fact Counter -->
+      <div class="container-fluid py-5">
+        <div class="container position-relative">
+          <div class="row g-8">
+            <div class="col-lg-4">
+              <p class="lato text-sm-end">OUR CORE VALUES</p>
+              <p class="lato fs-3 text-sm-end">OUR SKILLS AND EXPERTISE</p>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="quote-text-cont">
+                <i class="fa fa-3x fa-solid fa-quote-left"></i>
+                <span>
+                  We uphold the highest standards of honesty and transparency in all our dealings, ensuring trust and reliability with our clients and partners
+                </span>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 position-absolute end-0 bottom-0 d-none d-lg-block"
+            >
+              <img
+                src="{% static './img/forklift.png' %}"
+                class="img-fluid w-100"
+                style="object-fit: cover"
+                alt="Img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="container py-5">
+          <div class="row g-5">
+            <div
+              class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
+              <div class="counter-item text-center">
+                <div class="counter-counting my-3">
+                  <span class="fs-2 lato text-primary" data-toggle="counter-up"
+                    >829</span
+                  >
+                  <span class="h4 text-primary">+</span>
+                </div>
+                <p class="mb-4 fs-6">DELIVERED PACKAGES</p>
+                <p class="fs-7">
+                  Delivering countless packages with care and precision, trust us with your logistics needs.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+              data-wow-delay="0.3s"
+            >
+              <div class="counter-item text-center">
+                <div class="counter-counting my-3">
+                  <span class="fs-2 lato text-primary" data-toggle="counter-up"
+                    >220,456</span
+                  >
+                  <span class="h4 text-primary">+</span>
+                </div>
+                <p class="mb-4">KM PER YEAR</p>
+                <p class="fs-7">
+                  Covering vast distances, we transport goods thousands of kilometers each year, for our clients.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+              data-wow-delay="0.5s"
+            >
+              <div class="counter-item text-center">
+                <div class="counter-counting my-3">
+                  <span class="fs-2 lato text-primary" data-toggle="counter-up"
+                    >127</span
+                  >
+                  <span class="h4 text-primary">+</span>
+                </div>
+                <p class="mb-4">TONS OF GOODS</p>
+                <p class="fs-7">
+                  Moving tons of goods annually, we're dedicated to delivering your cargo safely and efficiently
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+              data-wow-delay="0.7s"
+            >
+              <div class="counter-item text-center">
+                <div class="counter-counting my-3">
+                  <span class="fs-2 lato text-primary" data-toggle="counter-up"
+                    >5,089</span
+                  >
+                  <span class="h4 text-primary">+</span>
+                </div>
+                <p class="mb-4">SATISFIED CLIENTS</p>
+                <p class="fs-7">
+                  With countless satisfied clients, our commitment to excellence shines through in every delivery we make
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Fact Counter -->
+
+      <!-- Cargo in Numbers -->
+      <div class="container-fluid cargo-numbers py-5">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+              <p class="fs-5 fw-bold text-primary text-sm-end">
+                WE ARE THE BEST
+              </p>
+              <p class="lato fs-3 text-sm-end mb-4 text-light">
+                CARGO IN NUMBERS
+              </p>
+              <p class="mb-4 text-sm-end text-white fs-7">
+                Behind every statistic lies a story of seamless logistics, reliability, and satisfaction
+              </p>
+            </div>
+            <div class="col-lg-8 wow fadeInUp">
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between">
+                  <h6 class="font-weight-bold text-light">
+                    MARKET SHARE IN CE REGION
+                  </h6>
+                  <h6 class="font-weight-bold text-light">90%</h6>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between">
+                  <h6 class="font-weight-bold text-light">
+                    REVENUE GROWTH PER YEAR
+                  </h6>
+                  <h6 class="font-weight-bold text-light">80%</h6>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between">
+                  <h6 class="font-weight-bold text-light">
+                    CUSTOMER BASE EXPANSION PER YEAR:
+                  </h6>
+                  <h6 class="font-weight-bold text-light">70%</h6>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    aria-valuenow="70"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between">
+                  <h6 class="font-weight-bold text-light">
+                    SUSTAINABILITY INITIATIVES INCREASE PER YEAR:
+                  </h6>
+                  <h6 class="font-weight-bold text-light">60%</h6>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    aria-valuenow="60"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cargo un Numbers -->
+
+      <!-- Subscribe Start -->
+      <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+          <div class="mx-auto text-center" style="max-width: 900px">
+            <h5 class="subscribe-title px-3">Track Your Shipment</h5>
+            <h1 class="mb-4">Shipment Tracking</h1>
+            <p class="mb-5">
+              Stay updated with the real-time status of your package. Enter your
+              tracking number, and we'll provide you with detailed information
+              about your shipment's location and estimated delivery time.
+            </p>
+            <div class="position-relative mx-auto">
+              <input
+                class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5"
+                type="text"
+                placeholder="Enter Tracking Number"
+                aria-label="Tracking Number"
+              />
+              <button
+                type="button"
+                class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2"
+              >
+                Track
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Subscribe End -->
+
+      <!-- FOOTER -->
+      <footer class="w-100 py-4 flex-shrink-0">
+        <div class="container py-4">
+          <div class="row gy-4 gx-5">
+            <div class="col-lg-4 col-md-6">
+              <h5 class="h1 text-white">AOL FREIGHT</h5>
+              <p class="small text-muted">
+                Delivering Excellence, Anywhere, Anytime
+              </p>
+              <p class="small text-muted mb-0">
+                &copy; Copyrights. All rights reserved AOLFreight
+                
+              </p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <h5 class="text-white mb-3">Quick links</h5>
+              <ul class="list-unstyled text-muted">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}">About</a></li>
+                <li><a href="{% url 'signin' %}">Get started</a></li>
+                <li><a href="{% url 'contactus' %}">FAQ</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <h5 class="text-white mb-3">Newsletter</h5>
+              <p class="small text-muted">
+                Stay in the Loop: Subscribe to Our Newsletter Today!
+              </p>
+              <form action="#">
+                <div class="input-group mb-3">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Recipient's username"
+                    aria-label="Recipient's username"
+                    aria-describedby="button-addon2"
+                  />
+                  <button
+                    class="btn btn-primary"
+                    id="button-addon2"
+                    type="button"
+                  >
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <script src="{% static './js/main.js' %}"></script>
+  </body>
+</html>

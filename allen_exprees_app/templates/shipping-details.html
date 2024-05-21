@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AOL FREIGHT. | Track</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+       <!-- Favicon -->
+    <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{% static './favicon_io/apple-touch-icon.png' %}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="{% static './favicon_io/favicon-32x32.png' %}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="{% static './favicon_io/favicon-16x16.png' %}"
+  />
+  <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LEAFLET JS MAP -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <link href="{% static './css/style.css' %}" rel="stylesheet" />
+    <link href="{% static './css/timeline.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+          <!-- Navbar & Hero Start -->
+          <div class="container-fluid position-relative p-0">
+            <nav
+              class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+            >
+              <a href="{% url 'home' %}" class="navbar-brand p-0">
+                <h1 class="m-0">
+                  AOL Freight
+                </h1>
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse"
+              >
+                <span class="fa fa-bars"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                  <a href="{% url 'home' %}" class="nav-item nav-link">Home</a>
+                  <a href="{% url 'home' %}" class="nav-item nav-link">About</a>
+                  <a href="{% url 'contactus' %}" class="nav-item nav-link"
+                    >Contact</a
+                  >
+                </div>
+                <a href="{% url 'signin' %}" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4"
+                  >Login</a
+                >
+              </div>
+            </nav>
+          </div>
+          <!-- Navbar & Hero End -->
+    
+           <!-- Header Start -->
+           <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h3 class="text-white display-3 mb-4">Track</h1>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active text-white">Track</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- SHIPMENT TABLE -->
+     <div class="shipment-details">
+        <h2>Shipment Details</h2>
+        {% if results %}
+       {% for result in results %} 
+        <table>
+            <thead>
+                <tr>
+                    <th class="tracking-number">Tracking Number</th>
+                    <th class="shipper-name">Name of Shipper</th>
+                    <th class="weight">Weight (KG)</th>
+                    <th class="length">Length (CM)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tracking-number">{{result.tracking_number}}</td>
+                    <td class="shipper-name">{{result.name_of_shipper}}</td>
+                    <td class="weight">{{result.weight_in_kg}}</td>
+                    <td class="length">{{result.length_in_cm}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th class="receiver-name">Receiver's Name</th>
+                    <th class="product">Product</th>
+                    <th class="height">Height (CM)</th>
+                    <th class="width">Width (CM)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="receiver-name">{{result.Recievers_name}}</td>
+                    <td class="product">{{result.product}}</td>
+                    <td class="height">{{result.height_in_cm}}</td>
+                    <td class="width">{{result.width_in_cm}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="departure-info">
+            <p>Departure Time: {{result.Destination}}</p>
+            <p>Departure Date: {{result.departure_date}}</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="origin">Origin</th>
+                    <th class="destination">Destination</th>
+                    <th class="pickup-date">Pickup Date</th>
+                    <th class="status">Status</th>
+                    <th class="speed">Speed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="origin">{{result.Origin}}</td>
+                    <td class="destination">{{result.Departure_time}}</td>
+                    <td class="pickup-date">{{result.pickup_date}}</td>
+                    <td class="status">{{result.status}}</td>
+                    <td class="speed">{{result.shipment_status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- SHIPMENT TABLE -->
+
+    <!-- Timeline start -->
+    <div>
+        <div class="container">
+            <div class="timeline">
+              {% if result.shipment_status == "Dispatched" %}
+                <div class="timeline-container primary">
+                    <div class="timeline-icon success">
+                        <i class="bi bi-truck"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Shipment Dispatched</span></h4>
+                        <p>Your package has been dispatched from the warehouse and is on its way to the destination sorting center.</p>
+                        <p class="timeline-subtitle">1 Hour Ago</p>
+                    </div>
+                </div>
+                {% elif result.shipment_status == "Failed Attempt" %}
+                <div class="timeline-container danger">
+                    <div class="timeline-icon danger">
+                        <i class="far fa-times-circle"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Delivery Attempt Failed</span></h4>
+                        <p>There was an unsuccessful delivery attempt due to recipient unavailable. Please reschedule delivery.</p>
+                        <p class="timeline-subtitle">2 Hours Ago</p>
+                    </div>
+                </div>
+                {% elif result.shipment_status == "Delayed" %}
+                <div class="timeline-container warning">
+                    <div class="timeline-icon warning">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Delayed Delivery</span></h4>
+                        <p>Due to unforeseen circumstances, there is a delay in the delivery schedule. We apologize for the inconvenience.</p>
+                        <p class="timeline-subtitle">1 Day Ago</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+    </div>
+    <!-- Timekine ends -->
+    <!-- Timekine ends -->
+    <div style="margin-bottom: 20px;" class="container map-wrapper">
+      <div class="column">
+        <div class="row-cols-md-auto" style='margin: auto;'>
+          <h3 style="text-align: center;">Package Current Location</h3>
+        </div>
+    
+        <div class="row-cols-md-auto" style='margin: auto;'>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Initialize the map
+      var latitude = "{{ result.lattitude }}";
+      var longitude = "{{ result.longitude }}";
+      var map = L.map('map').setView([latitude, longitude], 16); // Coordinates for Lagos State
+    
+      // Add the base tile layer (OpenStreetMap)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+    
+      // Add a marker for Lagos State
+      L.marker([latitude, longitude]).addTo(map)
+        .bindPopup('Current Location')
+        .openPopup();
+    </script>
+    <!-- MAP -->
+    {% endfor %}
+    {% else %}
+
+        <div class="error-message" style="height: 100px; padding: 10px; ">
+          <h5 style="font-size: 18px; font-weight: bold; text-align: center;">Hey! Couldn't find a package for you. Please input a correct Tracking ID. <a style="text-decoration: none; color: blue;" href="{% url 'home' %}">Click here to Go back</a></h5>
+      </div>
+
+    {% endif %}
+
+      
+
+      <!-- Back to Top -->
+    
+    </div>
+    
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <script src="{% static './js/main.js' %}"></script>
+    <script>
+      // Initialize the map
+      var latitude = "{{ result.lattitude }}";
+      var longitude = "{{ result.longitude }}";
+      var map = L.map('map').setView([latitude, longitude], 10); // Coordinates for Lagos State
+    
+      // Add the base tile layer (OpenStreetMap)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+    
+      // Add a marker for Lagos State
+      L.marker([latitude, longitude]).addTo(map)
+        .bindPopup('Lagos State')
+        .openPopup();
+    </script>
+  </body>
+</html>
