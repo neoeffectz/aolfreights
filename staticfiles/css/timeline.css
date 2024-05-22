@@ -1,0 +1,219 @@
+/* colors */
+:root {
+  --primary: rgb(8, 66, 116);
+  --secondary: #4f537b;
+  --info: #11cdef;
+  --success: #00bf9a;
+  --warning: #f6ab01;
+  --danger: #f53939;
+}
+
+/* timeline variables */
+:root {
+  --body-bg: #032e39;
+  --timeline-before-bg: rgba(3, 46, 57, 0.8);
+  --timeline-body-bg: rgba(8, 66, 116, 0.8);
+  --timeline-body-round: 10px;
+  --timeline-body-shadow: 1px 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+/* page container */
+/* .container {
+    max-width: 650px;
+    margin: 50px auto;
+} */
+
+/* timeline style */
+.timeline {
+  position: relative;
+  padding-left: 4rem;
+  margin: 4rem 0 4rem 30px;
+  color: white;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--timeline-body-bg);
+}
+
+.timeline-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -88px;
+  top: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.timeline-icon i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.timeline-body {
+  background: var(--timeline-body-bg);
+  border-radius: var(--timeline-body-round);
+  padding: 20px 20px 15px;
+  box-shadow: var(--timeline-body-shadow);
+}
+
+.timeline-body:before {
+  content: "";
+  background: inherit;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: -10px;
+  transform: rotate(45deg);
+  border-radius: 0 0 0 10px;
+}
+
+.timeline-title {
+  margin-bottom: 1.4rem;
+}
+
+.timeline-title .badge {
+  background: var(--secondary);
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.timeline-subtitle {
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.4;
+  margin-top: 16px;
+  font-size: 11px;
+}
+.timeline-icon.danger {
+  background-color: var(--danger);
+}
+.timeline-icon.success {
+  background-color: var(--success);
+}
+.timeline-icon.warning {
+  background-color: var(--warning);
+}
+.timeline-icon.info {
+  background-color: var(--info);
+}
+.timeline-icon.primary {
+  background-color: var(--primary);
+}
+/* Primary Timeline */
+.timeline-container.primary .badge,
+.timeline.primary .timeline-icon {
+  background: var(--primary) !important;
+}
+
+/* Info Timeline */
+.timeline-container.info .badge,
+.timeline.info .timeline-icon {
+  background: var(--info) !important;
+}
+
+/* Success Timeline */
+.timeline-container .badge,
+.timeline.success .timeline-icon {
+  background: var(--success) !important;
+}
+
+/* Warning Timeline */
+.timeline-container.warning .badge,
+.timeline.warning .timeline-icon {
+  background: var(--warning) !important;
+}
+
+/* Danger Timeline */
+.timeline-container.danger .badge,
+.timeline.danger .timeline-icon {
+  background: var(--danger) !important;
+}
+
+/* shipment details table */
+.shipment-details {
+  width: 80%;
+  margin: 50px auto;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "DM Sans", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+th {
+  color: var(--primary);
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.departure-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.departure-info p {
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 768px) {
+  /* Styles for screens less than 768px wide */
+  .shipment-details {
+    padding: 10px;
+    margin: 50px 4px;
+    width: 100%;
+  }
+
+  th,
+  td {
+    font-size: 0.8rem;
+  }
+}
+
+/* leaflet map */
+#map {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 400px; /* or as desired */
+  width: 100%; /* This means "100% of the width of its container", the .col-md-8 */
+}
