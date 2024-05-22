@@ -25,11 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#tms0s@iqijd#-=ek8-!sy=2*s4s=#nbp@9k-ifrapufg1asdh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # DEBUG = os.environ.get('DEBUG', 'True')=="True"
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'allenexpressdelivery.onrender.com', 'allenexpressdelivery.net']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',  'aolfreights.onrender.com']
 
 
 # Application definition
