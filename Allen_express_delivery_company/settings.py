@@ -29,7 +29,7 @@ DEBUG = True
 
 # DEBUG = os.environ.get('DEBUG', 'True')=="True"
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost',  'aolfreights.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',  'aolfreights.onrender.com', 'aolfreights.com']
 
 
 # Application definition
